@@ -28,7 +28,7 @@ public class TodoTests {
 
     @AfterEach
     void clearItems() {
-        action.clearAllItems(0);
+        action.clearAllItems(5);
     }
 
 
@@ -176,7 +176,7 @@ public class TodoTests {
         itemName.shouldNotHave(exactValue(posData));
         itemName.shouldHave(exactText(String.valueOf(posData)));
 
-        // Тут тест має впасти
+        // Here the test must fail
 //        itemName.shouldHave(exactValue(posData));
     }
 
