@@ -1,7 +1,5 @@
 package com.todomvc;
-
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class PageElements {
@@ -37,7 +35,6 @@ public class PageElements {
         return itemCheckbox;
     }
 
-
     public SelenideElement getItemCount() {
         SelenideElement getItemCounter = $(".todo-count strong");
         return getItemCounter;
@@ -48,12 +45,10 @@ public class PageElements {
         return itemCheckNumer;
     }
 
-
     public SelenideElement getAllTab() {
         SelenideElement allTab = $(".filters li:nth-child(1) a");
         return allTab;
     }
-
 
     public SelenideElement getActiveTab() {
         SelenideElement activeTab = $(".filters li:nth-child(2) a");
@@ -69,7 +64,6 @@ public class PageElements {
         SelenideElement counterText = $(".footer span");
         return counterText;
     }
-
 
 }
 
