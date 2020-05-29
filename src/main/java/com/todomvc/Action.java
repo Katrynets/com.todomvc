@@ -16,7 +16,6 @@ public class Action {
     SelenideElement activeTab = pageElements.getActiveTab();
 
 
-
     SelenideElement createNewTodoItemPosData(int number) {
         String posData = data.positiveData[number];
         SelenideElement createTodoItemPosData = todoItem.setValue(posData).pressEnter();
@@ -27,7 +26,7 @@ public class Action {
         SelenideElement deleteIcon = pageElements.getDeleteIcon();
         String posData = new String();
 
-        SelenideElement removeAddedItem = createNewTodoItemPosData(0);
+        SelenideElement removeAddedItem = createNewTodoItemPosData(5);
         itemName.hover();
         deleteIcon.should(appear).click();
 
