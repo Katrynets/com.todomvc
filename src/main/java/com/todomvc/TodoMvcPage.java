@@ -1,13 +1,16 @@
 package com.todomvc;
+
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
-public class PageElements {
+public class TodoMvcPage {
 
 
-    public SelenideElement getTodoItem() {
-        SelenideElement todoItem = $("[class='new-todo']");
-        return todoItem;
+    public SelenideElement createTodoItem(String todoValue) {
+        return $("[class='new-todo']")
+                .setValue(todoValue)
+                .pressEnter();
     }
 
     public SelenideElement getItemName() {
@@ -40,8 +43,8 @@ public class PageElements {
         return getItemCounter;
     }
 
-    public <number> SelenideElement itemCheckNumers(int number)  {
-        SelenideElement itemCheckNumer = $("li:nth-child("+number+") .toggle[type='checkbox']");
+    public <number> SelenideElement itemCheckNumers(int number) {
+        SelenideElement itemCheckNumer = $("li:nth-child(" + number + ") .toggle[type='checkbox']");
         return itemCheckNumer;
     }
 
@@ -65,6 +68,11 @@ public class PageElements {
         return counterText;
     }
 
+    public void createTodoItems(String... positiveData) {
+        for (String positiveDatum : positiveData) {
+            createTodoItem(positiveDatum);
+        }
+    }
 }
 
 
